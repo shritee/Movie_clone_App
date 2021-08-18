@@ -1,24 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import { routing } from './router/router';
+import {BrowserRouter} from 'react-router-dom'
+import {LoginProvider} from './context/loginContext'
+import {useState} from 'react'
 
 function App() {
+const [login, setLogin] = useState(false)
+const logout=()=>{
+  setLogin(false);
+}
+const changeLogin = ()=>{
+  setLogin(true);
+}
+const loginInfo={
+  login:login,
+  logout:logout,
+  changeLogin:changeLogin
+
+}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <BrowserRouter>
+    <LoginProvider value={loginInfo}>
+    {routing}
+    </LoginProvider>
+    </BrowserRouter>
+    </>
   );
 }
 
