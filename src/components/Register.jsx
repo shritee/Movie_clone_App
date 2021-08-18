@@ -8,7 +8,7 @@ export default function Register() {
 
     const Add=()=>{
         // e.preventDefault()
-        axios.post('http://localhost:3005/insert',{userName:userName, email:email, password:password})
+        axios.post('https://movie-cloneapp.herokuapp.com/insert',{userName:userName, email:email, password:password})
     }
     return (
     <>

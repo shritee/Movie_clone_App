@@ -18,7 +18,7 @@ export default function Login() {
         const data={
             email:email, password:password
         }
-        axios.post('http://localhost:3005/login',data)
+        axios.post('https://movie-cloneapp.herokuapp.com/login',data)
         .then((res)=>{
             if(res.data === "Login successfully"){
                 alert("Login successfully")

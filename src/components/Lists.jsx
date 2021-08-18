@@ -10,7 +10,7 @@ export default function List() {
  const [search,setSearch]=useState('')
  
  const get = ()=> {
- axios.get("http://localhost:3005/generic").then(res=>setdata(res.data)
+ axios.get("https://movie-cloneapp.herokuapp.com//generic").then(res=>setdata(res.data)
  )
  }
  useEffect(() => {
@@ -19,7 +19,7 @@ export default function List() {
 
  
  const handleDelete=(id)=>{
-     axios.delete(`http://localhost:3005/delete/${id}`)
+     axios.delete(`https://movie-cloneapp.herokuapp.com//delete/${id}`)
  }
 
 
